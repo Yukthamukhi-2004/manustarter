@@ -300,9 +300,13 @@ def generate_fallback_test_cases(request: TestCaseRequest, num_cases: Optional[i
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "main:app",
-        host=os.getenv("HOST", "127.0.0.1"),
-        port=int(os.getenv("PORT", 3000)),
-        reload=True
-    )
+    # Only run uvicorn locally, not on Render
+    if os.getenv("RENDER", "false").lower() != "true":
+        uvicorn.run(
+            "main:app",
+            host=os.getenv("HOST", "127.0.0.1"),
+            port=int(os.getenv("PORT", 3000)),
+            reload=True
+        )
+    else:
+        print("Running on Render - uvicorn will be started by Render")
