@@ -9,6 +9,6 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://manustarter-backend.onrender.com"
+    "REACT_APP_API_URL": "https://manustarter-1.onrender.com"
   }
 }
