@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.input {
+  background-color: #3d3d3d;
+  border: 1px solid #555;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.select {
+  background-color: #3d3d3d;
+  border: 1px solid #555;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #555;
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #3d3d3d;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.table tr:hover {
+  background-color: #3a3a3a;
+}
+
+.success-banner {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.error-banner {
+  background-color: #dc3545;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #007bff;
+}
