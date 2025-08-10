@@ -13,6 +13,12 @@ load_dotenv()
 
 app = FastAPI(title="Manual Testing AI Agent", version="1.0.0")
 
+@app.on_event("startup")
+async def startup_event():
+    print("🚀 Manual Testing AI Agent starting up...")
+    print(f"Environment: {os.getenv('ENVIRONMENT', 'development')}")
+    print(f"Allowed origins: {os.getenv('ALLOWED_ORIGINS', 'default')}")
+
 # CORS configuration
 origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000,https://manustarter.vercel.app").split(",")
 methods = os.getenv("ALLOWED_METHODS", "GET,POST,PUT,DELETE,OPTIONS").split(",")
@@ -101,6 +107,10 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "service": "Manual Testing AI Agent"}
+
+@app.get("/test")
+async def test_endpoint():
+    return {"message": "Test endpoint working", "timestamp": "now"}
 
 @app.post("/generate-test-cases", response_model=TestCaseResponse)
 async def generate_test_cases(request: TestCaseRequest):
